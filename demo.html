@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>demo</title>
+</head>
+<style>
+  *{margin:0;padding:0}
+  .whole-dial {
+    -moz-user-select:none;/*火狐*/
+    -webkit-user-select:none;/*webkit浏览器*/
+    -ms-user-select:none;/*IE10*/
+    user-select:none;
+    right: 15px;
+    bottom:15px;
+    width: 45px;
+    height: 45px;
+    z-index: 6;
+  }
+  .dial {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    z-index: 5;
+    border-radius: 50%;
+    background-size: 50%;
+  }
+  .dial-plate {
+    width: 270px;
+    height: 340px;
+    right: 0;
+    z-index: 5;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+  }
+  .arrow {
+    position: absolute;
+    width: 25px;
+    height: 12px ;
+    right: 12px;
+    bottom: -12px;
+  }
+  .dial-name {
+    line-height: 45px;
+    font-size: 18px;
+    font-weight: nor;
+    color: #9BA8BA;
+  }
+  .dial-close {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 10px;
+    right: 8px;
+    cursor: pointer;
+  }
+  .input-box{
+    position: relative;
+    width: 245px;
+    margin: 0 auto;
+    padding: 5px 10px;
+    background-color: #F2F4F6;
+  }
+
+  .input-delete{
+    position: absolute;
+    right: 5px;
+    top: 7px;
+    background-position: -700px 0;
+  }
+
+  .dial-input{
+    width: 220px;
+    color: #47d572;
+    font-size: 25px;
+    font-weight: bolder;
+    padding-right: 22px;
+    border: none; //去除边框
+  outline: none;   //去除边框点击颜色
+  background: 0;
+  }
+  .digital-keyboard li {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    margin: 10px 0 0 10px;
+    line-height: 45px;
+    color: #9E9E9E;
+    font-size: 19px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid #CBD3DD;
+    cursor: pointer;
+  }
+  .digital-keyboard li:hover{
+    cursor: pointer;
+    color: #fff;
+    background-color:#39c463 ;
+    border: 1px solid transparent;
+  }
+  .popup_foots {
+    display: inline-block;
+  }
+  .dial-btn{
+    display: inline-block;
+    width: 100px;
+    line-height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-weight: normal;
+    color:#666;
+  }
+
+  .dial-btn+.dial-btn{
+    margin-left:10px ;
+  }
+  .call-icon{
+    color: #ffffff;
+    border: 1px solid #47d572;
+    background: #47d572;
+  }
+  .reset-ico:hover{
+    color: #39c463;
+    border: 1px solid #39c463;
+  }
+  .btn.dial-button {
+    height: 50px;
+    width: 101px;
+    font-size: 18px;
+    line-height: 0px;
+    float: left;
+  }
+  .digital-keyboard{
+    padding:0px 0 20px;
+  }
+  .btn2.clear-button {
+    width: 100px;
+    height: 50px;
+    left: 0px;
+    font-size: 18px;
+    line-height: 0px;
+    margin: 0px 0px 0px 20px;
+  }
+
+</style>
+<body style="background:#b7b7b7">
+
+<!-- 开发模式 -->
+<script width="500" height="500" src="./src/shell.core.js?appid=wx001&cid=gh_xxxx"></script>
+<script src="./src/shell.const.js"></script>
+<script src="./src/shell.utils.js"></script>
+<script src="./src/shell.drag.js"></script>
+<script src="./src/shell.css.js"></script>
+<script src="./src/shell.html.js"></script>
+<script src="./src/shell.service.js"></script>
+<script src="./src/shell.ui.js"></script>
+<script src="./src/shell.config.js"></script>
+
+<!--生产模式-->
+<!--<script theme="paic" width="500" height="500" src="./dist/shell.min.js?appid=wx001&cid=gh_xxxx"></script>-->
+
+<script>
+  CKToolBar.config({
+    components:[
+      {
+        name:'webtrc',
+        type:'common',
+        title:"视频聊天",
+        url: "http://118.24.31.195:3000/webrtc"
+      },
+      {
+        name:'talk',
+        type:'common',
+        title:"在线im",
+        url: "http://118.24.31.195:3000/im"
+      }
+    ],
+    buttons:[
+      {ico:"http://img.mukewang.com/563afef30001025000900090.jpg",title:"ng", click:function(evt,btn){alert("自定义事件")}},
+      {ico:"http://img.mukewang.com/563aff440001e80700900090.jpg",title:"js",href:"https://www.baidu.com"},
+      {ico:"http://img.mukewang.com/563aff7e0001c8c700900090.jpg",title:"关注",href:"https://www.baidu.com",image:"https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/qrcode/zbios_efde696.png"},
+    ]
+  });
+</script>
+</body>
+</html>
